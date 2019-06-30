@@ -27,6 +27,11 @@ func init() {
 		panic(err)
 	}
 
+	// Create database if not exists
+	if err := db.Migrate(); err != nil {
+		fmt.Println("Migration Error :", err)
+	}
+
 	dbConfig := mysql.Config{
 		User:                 h.Config.Database.User,
 		Passwd:               h.Config.Database.Password,
