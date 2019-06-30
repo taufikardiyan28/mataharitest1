@@ -29,7 +29,7 @@ or
 ##### Products:
 | | path | method|data|
 | ----- | ------ | ------ |-----|
-|List|/api/v1/products |GET||
+|List All Products|/api/v1/products |GET||
     
 ##### Carts:
 | | path | method|data|
