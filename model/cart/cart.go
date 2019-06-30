@@ -28,7 +28,7 @@ func (c *Cart) List(param CartData) ([]CartData, error) {
 }
 
 func (c *Cart) listByAID(AID string) ([]CartData, error) {
-	strSQL := `SELECT a.id, b.productName, a.qty, b.stock as currentStock FROM carts 
+	strSQL := `SELECT a.id, a.productId, b.productName, a.qty, b.stock as currentStock FROM carts 
 				a INNER JOIN products b ON a.productId=b.id WHERE AID=? AND isOrdered=0`
 	data := []CartData{}
 	pool := c.GetPool()
@@ -37,7 +37,7 @@ func (c *Cart) listByAID(AID string) ([]CartData, error) {
 }
 
 func (c *Cart) listByUser(userId int64) ([]CartData, error) {
-	strSQL := `SELECT a.id, b.productName, a.qty, b.stock as currentStock FROM carts 
+	strSQL := `SELECT a.id, a.productId, b.productName, a.qty, b.stock as currentStock FROM carts 
 				a INNER JOIN products b ON a.productId=b.id WHERE userId=? AND isOrdered=0`
 	data := []CartData{}
 	pool := c.GetPool()
