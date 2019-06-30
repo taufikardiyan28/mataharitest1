@@ -7,6 +7,7 @@ import (
 	"github.com/go-sql-driver/mysql"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
+	"github.com/taufikardiyan28/mataharitest1/controller"
 	h "github.com/taufikardiyan28/mataharitest1/helper"
 	db "github.com/taufikardiyan28/mataharitest1/model"
 	validator "gopkg.in/go-playground/validator.v9"
@@ -55,6 +56,9 @@ func main() {
 		AllowOrigins: []string{"*"},
 		AllowMethods: []string{echo.GET, echo.HEAD, echo.PUT, echo.PATCH, echo.POST, echo.DELETE},
 	}))
+
+	//Set Routers
+	controller.RegisterRouters(e.Group("/api"))
 
 	// Start
 	e.Start(fmt.Sprintf(":%d", h.Config.Port))
