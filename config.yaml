@@ -4,4 +4,4 @@ database:
   port: 3306
   user: "root"
   password: "pik@123"
-  db_name: "eyedays"
+  db_name: "eyeday"
