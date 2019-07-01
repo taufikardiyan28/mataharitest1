@@ -1,4 +1,4 @@
-# mataharitest1
+# Shopping Cart
 
 ## Installation
 
