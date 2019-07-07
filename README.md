@@ -1,4 +1,4 @@
-# Shopping Cart
+# Golang Shopping Cart
 
 ## Installation
 
